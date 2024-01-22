@@ -195,3 +195,20 @@ CRITICAL - 2024-01-22 09:03:32 --> Argument 1 passed to _get_uri() must be of th
 #10 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #11 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #12 {main}
+CRITICAL - 2024-01-22 09:56:19 --> Invalid file: pendaftaran.php
+#0 C:\xampp\htdocs\foto\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pendaftaran.php')
+#1 C:\xampp\htdocs\foto\system\Common.php(1089): CodeIgniter\View\View->render('pendaftaran', Array, true)
+#2 C:\xampp\htdocs\foto\app\Controllers\Home.php(70): view('pendaftaran')
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\Home->register()
+#4 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-01-22 09:57:42 --> Class 'App\Controllers\M_model' not found
+#0 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\Home->aksi_register()
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}

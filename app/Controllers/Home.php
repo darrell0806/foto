@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\M_login;
+use App\Models\M_model;
 
 
 class Home extends BaseController
@@ -28,17 +29,17 @@ class Home extends BaseController
         // Tambahkan validasi jika field kosong
         if (empty($u) && empty($p)) {
             session()->setFlashdata('error', 'Username dan password tidak boleh kosong');
-            return redirect()->to('login');
+            return redirect()->to('/Home');
         }
 
         if (empty($u)) {
             session()->setFlashdata('error', 'Username tidak boleh kosong');
-            return redirect()->to('login');
+            return redirect()->to('/Home');
         }
 
         if (empty($p)) {
             session()->setFlashdata('error', 'Password tidak boleh kosong');
-            return redirect()->to('login');
+            return redirect()->to('/Home');
         }
 
         $model= new M_login();
@@ -55,13 +56,41 @@ class Home extends BaseController
         }else {
             // Tambahkan peringatan username atau password salah
             session()->setFlashdata('error', ' Username atau password Anda salah');
-            return redirect()->to('login');
+            return redirect()->to('/Home');
         }
     }
 
     public function log_out()
     {
         session()->destroy();
-        return redirect()->to('login');
+        return redirect()->to('/Home');
     }
+    public function register()
+    {
+        
+		echo view('login/register');
+       
+	
+    }
+    public function aksi_register()
+{
+    $a = $this->request->getPost('username');
+    $b = $this->request->getPost('password');
+    $c = $this->request->getPost('nama');
+    
+  
+    $imageName = 'default.jpg';
+
+    $simpan = array(
+        'username' => $a,
+        'password' =>md5($b),
+        'nama' => $c,
+        'foto' => $imageName
+    );
+
+    $model = new M_model();
+    $model->simpan('user', $simpan);
+
+    return redirect()->to('/Home');
+}
 }

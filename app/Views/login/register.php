@@ -146,8 +146,10 @@ button{
 					<?= session('error') ?></div>
 				<?php endif; ?>
 
-				<form action="<?= base_url('/Home/aksi_login/')?>"method="post">
-        <h3>Login Here</h3>
+				<form action="<?= base_url('/Home/aksi_register/')?>"method="post">
+        <h3>Register</h3>
+        <label for="username">Nama</label>
+        <input type="text" placeholder="Nama" id="nama" name="nama">
 
         <label for="username">Username</label>
         <input type="text" placeholder="Username" id="username" name="username">
@@ -155,9 +157,9 @@ button{
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password" name="password">
 
-        <button>Log In</button>
+        <button type="submit">Register</button>
         
-        <p class="register-link">Belum Punya Akun? <a href="/Home/register" class="register-button">Register Sekarang</a></p>
+       
         
     </form>
 </body>
