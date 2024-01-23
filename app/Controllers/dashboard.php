@@ -3,7 +3,8 @@
 namespace App\Controllers;
 use App\Models\PostModel;
 use App\Models\AlbumModel;
-
+use App\Models\CommentModel;
+use App\Models\UserModel;
 
 class dashboard extends BaseController
 {
@@ -88,6 +89,70 @@ class dashboard extends BaseController
     
         return $albums;
     }
+    public function commentForm($postId)
+    {
+        $postModel = new PostModel();
+        $commentModel = new CommentModel();
+        
+        $post = $postModel->getPostById($postId); // Menggunakan $postId
+        $comments = $commentModel->getCommentsByPost($postId); // Menggunakan $postId
+        
+        $data = [
+            'post_id' => $postId,
+            'post' => $post,
+            'comments' => $comments,
+        ];
+        
+        echo view('header');
+        echo view('comment_form', $data);
+        echo view('footer');
+    }
+    public function submitComment()
+    {
+        $commentModel = new CommentModel();
+        $userId = session()->get('id');
+        $postId = $this->request->getPost('post_id');
+        $commentText = $this->request->getPost('comment');
     
-   
+        // Simpan komentar ke database menggunakan CommentModel
+        $commentModel->addComment(['user_id' => $userId, 'post_id' => $postId, 'comment' => $commentText]);
+    
+        // Redirect kembali ke halaman viewAlbum dengan menyertakan id_album
+        $postModel = new PostModel();
+        $post = $postModel->getPostById($postId);
+        $albumId = $post['album'];
+    
+        return redirect()->to(base_url('dashboard/viewAlbum/' . $albumId));
+    }
+    public function cari()
+    {
+        echo view('header');
+        echo view('search');
+        echo view('footer');
+    }
+    public function searchUser()
+    {
+        $username = $this->request->getPost('search_username');
+
+        $userModel = new UserModel();
+        $albumModel = new AlbumModel();
+
+        $userData = $userModel->getUserByUsername($username);
+
+        if (!empty($userData)) {
+            $albums = $albumModel->getAlbumsByUser($userData['id_user']);
+
+            $data = [
+                'userData' => $userData,
+                'albums'   => $albums,
+            ];
+
+            echo view('header');
+            echo view('search_result', $data);
+            echo view('footer');
+        } else {
+            // Handle jika pengguna tidak ditemukan
+            echo "User not found.";
+        }
+    }
 }

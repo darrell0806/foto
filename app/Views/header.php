@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Photosen &mdash; Colorlib Website Template</title>
+  <title>Da Gallery Website</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -77,7 +77,7 @@
                   </ul>
                 </li> -->
                
-                <li><a href="#">Search User</a></li>
+                <li><a href="/dashboard/cari">Search User</a></li>
                 <li><a href="/post/">Make A Post</a></li>
                 <li><a href="/acc">Account</a></li>
                 <li><a href="/Home/log_out/">Log Out</a></li>

@@ -30,7 +30,10 @@ public function getPostsByAlbum($id_album)
             ->get()
             ->getRowArray();
     }
-
+    public function addComment($data)
+    {
+        return $this->insert($data);
+    }
     public function addLike($data)
     {
         return $this->db->table('likes')->insert($data);
@@ -39,5 +42,9 @@ public function getPostsByAlbum($id_album)
     public function updateLike($data, $condition)
     {
         return $this->db->table('likes')->update($data, $condition);
+    }
+    public function getPostById($postId)
+    {
+        return $this->find($postId);
     }
 }

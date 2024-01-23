@@ -16,35 +16,31 @@
         margin-top: 10px;
     }
 </style>
-
 <div class="container">
     <div class="row">
         <div class="col-md-4">
             <h2>Account Information</h2>
 
-            <!-- Tampilkan informasi pengguna -->
             <?php if (!empty($userData)) : ?>
+                <!-- Tampilkan informasi pengguna -->
                 <p>Nama: <?= $userData['nama']; ?></p>
                 <p>Username: <?= $userData['username']; ?></p>
-                <!-- Tambahkan informasi lainnya sesuai kebutuhan -->
 
-                <!-- Tampilkan foto profil -->
                 <?php if (!empty($userData['foto'])) : ?>
                     <img src="<?= base_url('images/' . $userData['foto']); ?>" alt="Profile Picture" class="img-fluid">
                 <?php else : ?>
                     <p>No profile picture available.</p>
                 <?php endif; ?>
 
-                <!-- Tambahkan button -->
-                <a href="<?= base_url('/acc/edit_profile'); ?>" class="btn btn-primary btn-view-album">Edit Profile</a>
+               
             <?php endif; ?>
         </div>
 
         <div class="col-md-8">
             <h2>My Albums</h2>
 
-            <!-- Tampilkan daftar album pengguna -->
             <?php if (!empty($albums)) : ?>
+                <!-- Tampilkan daftar album pengguna -->
                 <div class="row">
                     <?php foreach ($albums as $album) : ?>
                         <div class="col-lg-4">

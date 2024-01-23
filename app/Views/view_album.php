@@ -1,4 +1,3 @@
-<!-- Di bagian head halaman -->
 <div class="container-fluid" data-aos="fade" data-aos-delay="500">
     <h2 align="center">More Photos in Album</h2>
     <div class="row">
@@ -7,16 +6,18 @@
                 <a href="<?= base_url('images/' . $photo['fotop']); ?>"><img src="<?= base_url('images/' . $photo['fotop']); ?>" alt="Image" class="img-fluid"></a>
                 <p><?= $photo['deskripsi']; ?></p>
 
-                <!-- Menampilkan Likes -->
-                <div class="like-section">
-    <button class="like-button" data-post-id="<?= $photo['id_post']; ?>">
-        <?php
-        $likeStatus = $photo['like_status'] ?? null;
-        echo ($likeStatus == 'Like') ? 'Dislike' : 'Like';
-        ?>
-    </button>
-    <span class="like-count" data-post-id="<?= $photo['id_post']; ?>"><?= $photo['like_count']; ?> Likes</span>
-</div>
+                <!-- Menampilkan Tombol Like dan Komentar -->
+                <div class="interaction-section">
+                    <button class="like-button" data-post-id="<?= $photo['id_post']; ?>">
+                        <?php
+                        $likeStatus = $photo['like_status'] ?? null;
+                        echo ($likeStatus == 'Like') ? 'Dislike' : 'Like';
+                        ?>
+                    </button>
+                   
+                    
+                    <a href="<?= base_url('dashboard/commentForm/' . $photo['id_post']); ?>" class="comment-button">Comment</a>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
