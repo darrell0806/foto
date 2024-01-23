@@ -79,8 +79,7 @@
                
                 <li><a href="#">Search User</a></li>
                 <li><a href="/post/">Make A Post</a></li>
-                <li><a href="about.html">My Post</a></li>
-                <li><a href="contact.html">Account</a></li>
+                <li><a href="/acc">Account</a></li>
                 <li><a href="/Home/log_out/">Log Out</a></li>
               </ul>
             </nav>
