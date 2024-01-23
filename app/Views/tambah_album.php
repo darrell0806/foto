@@ -59,31 +59,23 @@
 <body>
 
   <div class="form-container">
-    <form action="/post/aksi_tambah/" method="post" enctype="multipart/form-data">
-      <label for="photo">Foto:</label>
+    <form action="/post/aksi_tambah_album/" method="post" enctype="multipart/form-data">
+      <label for="photo">Cover Album:</label>
       <div class="position-relative">
-        <input type="file" class="form-control" placeholder="Foto" name="foto" id="foto" onchange="previewImage()" accept="image/*" required>
+        <input type="file" class="form-control" placeholder="cover" name="cover" id="foto" onchange="previewImage()" accept="image/*" required>
         <img id="preview" src="" alt="" style="max-width: 100px; margin-top: 10px;">
       </div>
 
-      <label for="description">Deskripsi:</label>
-      <textarea id="description" name="deskripsi" placeholder="Masukkan deskripsi" required></textarea>
+      <label for="description">Nama Album:</label>
+      <textarea id="description" name="nama_album" placeholder="Masukkan Nama Album" required></textarea>
 
-      <label for="album">Album:</label>
-      <select id="album" name="album" required>
-        <option value="" selected disabled>- Pilih Album -</option>
-        <?php
-        foreach ($c as $d) {
-          echo '<option value="' . $d->id_album . '">' . $d->nama_album . '</option>';
-        }
-        ?>
-      </select>
+      
 
-      <p class="text-below-album">Tidak menemukan album yang diinginkan? <a href="/post/tambah_album" class="add-album-btn">Tambah Album</a></p>
+     
 
       <br>
       <br>
-      <button type="submit">Tambah Post</button>
+      <button type="submit">Tambah Album</button>
     </form>
   </div>
 

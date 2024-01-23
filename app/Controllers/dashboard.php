@@ -37,20 +37,22 @@ class dashboard extends BaseController
     private function getAlbumsWithPosts(PostModel $postModel, AlbumModel $albumModel)
     {
         $albums = [];
-
+    
         $allAlbums = $albumModel->findAll();
-
+    
         foreach ($allAlbums as $album) {
             $albumData = [
                 'id_album' => $album['id_album'],
                 'nama_album' => $album['nama_album'],
+                'cover' => $album['cover'],  // Tambahkan ini untuk kolom cover
                 'posts' => $postModel->getPostsByAlbum($album['id_album']),
             ];
-
+    
             $albums[] = $albumData;
         }
-
+    
         return $albums;
     }
+    
    
 }

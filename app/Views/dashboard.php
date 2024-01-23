@@ -7,16 +7,17 @@
                         <h2 class="mb-3"><?= $album['nama_album']; ?></h2>
                         <a href="<?= base_url('dashboard/viewAlbum/' . $album['id_album']); ?>" class="btn btn-outline-white py-2 px-4">More Photos</a>
                     </div>
-                    <?php if (!empty($album['posts'])) : ?>
-                        <img src="<?= base_url('images/default1.jpg'); ?>" alt="Image" class="img-fluid">
+                    <?php if (!empty($album['cover'])) : ?>
+                        <img src="<?= base_url('images/' . $album['cover']); ?>" alt="Album Cover" class="img-fluid">
                     <?php else : ?>
-                        <p>No photos available</p>
+                        <img src="<?= base_url('images/default1.jpg'); ?>" alt="Default Image" class="img-fluid">
                     <?php endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
+
 
 
     <div class="footer py-4">
