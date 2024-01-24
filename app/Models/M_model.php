@@ -28,4 +28,5 @@ public function tampil($table) {
     public function qedit($table, $data, $where){
         return $this->db->table($table)->update($data, $where);
     }
+    
 }

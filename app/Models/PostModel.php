@@ -8,17 +8,20 @@ class PostModel extends Model
 {
     protected $table = 'post';
     protected $primaryKey = 'id_post';
-    protected $allowedFields = ['fotop', 'deskripsi', 'album'];
+    protected $allowedFields = ['fotop', 'deskripsi', 'album','user_maker'];
 
     // Tambahkan fungsi untuk mendapatkan post berdasarkan album
     public function getPostsByAlbumm($id_album, $userId)
 {
     $builder = $this->db->table('post');
-    $builder->select('post.*, likes.status AS like_status');
+    $builder->select('post.*, likes.status AS like_status, user.id_user, post.user_maker');
     $builder->join('likes', 'likes.post_id = post.id_post AND likes.user_id = ' . $userId, 'left');
+    $builder->join('user', 'user.id_user = post.user_maker');
     $builder->where('post.album', $id_album);
-    return $builder->get()->getResultArray();
+    return $builder->get()->getResult();
 }
+
+
 public function getPostsByAlbum($id_album)
 {
     return $this->where('album', $id_album)->findAll();
@@ -30,10 +33,7 @@ public function getPostsByAlbum($id_album)
             ->get()
             ->getRowArray();
     }
-    public function addComment($data)
-    {
-        return $this->insert($data);
-    }
+   
     public function addLike($data)
     {
         return $this->db->table('likes')->insert($data);
@@ -46,5 +46,15 @@ public function getPostsByAlbum($id_album)
     public function getPostById($postId)
     {
         return $this->find($postId);
+    }
+    public function getAlbumIdByPostId($postId)
+    {
+        $post = $this->find($postId);
+
+        if ($post) {
+            return $post['album']; // Assuming 'album_id' is the foreign key in your posts table
+        }
+
+        return null; // Post not found
     }
 }

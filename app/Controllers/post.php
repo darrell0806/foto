@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\M_model;
-
+use App\Models\PostModel;
 
 
 class post extends BaseController
@@ -79,4 +79,65 @@ class post extends BaseController
             return redirect()->to('dashboard');
       
     }
+    public function editPost($user)
+	{
+		
+			$model=new M_model();
+			$where=array('id_post'=>$user);
+			$data['jojo']=$model->getWhere('post',$where);
+            $data['a']=$model->tampil('album');
+			echo view('header');        
+			echo view('edit_post',$data);
+			echo view('footer');
+		
+	}
+	public function aksi_edit_post()
+{
+    $a=$this->request->getPost('deskripsi');
+    $b=$this->request->getPost('album');
+    $foto = $this->request->getFile('foto');
+    $id=$this->request->getPost('id');
+
+    $imageName = null; 
+
+    if ($foto && $foto->isValid() && !$foto->hasMoved()) {
+        $imageName = $foto->getName();
+        $foto->move('images/', $imageName);
+    }
+
+    $where = array('id_post' => $id);
+    $data1 = array(
+        'deskripsi' => $a,
+        'album' => $b
+    );
+
+    if ($imageName) {
+        $data1['fotop'] = $imageName;
+    }
+
+    $darrel = new M_model();
+    $darrel->qedit('post', $data1, $where);
+    return redirect()->to('/dashboard');
+}
+public function deletePost($id)
+{
+    $model = new m_model();
+    $model1 = new PostModel();
+
+    // Dapatkan informasi post sebelum dihapus
+    $post = $model1->getPostById($id);
+
+    // Cek apakah ada foto yang akan dihapus
+    if (!empty($post['fotop'])) {
+        // Hapus foto dari direktori
+        unlink(FCPATH . 'images/' . $post['fotop']);
+    }
+
+    // Hapus post dari database
+    $where = array('id_post' => $id);
+    $model->hapus('post', $where);
+
+    return redirect()->to('/dashboard');
+}
+
 }

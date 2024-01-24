@@ -20,9 +20,11 @@ class UserModel extends Model
         return $this->where('id_user', $userId)->first();
     }
 
-    // Metode untuk memperbarui data pengguna
+    // Fungsi untuk melakukan update data user
     public function updateUser($userId, $data)
     {
-        $this->update($userId, $data);
+        $this->set($data);
+        $this->where('id_user', $userId);
+        $this->update();
     }
 }

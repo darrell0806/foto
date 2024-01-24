@@ -443,3 +443,178 @@ CRITICAL - 2024-01-23 10:44:10 --> Call to a member function getName() on null
 #3 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #5 {main}
+ERROR - 2024-01-23 18:07:53 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2024-01-23 18:07:53 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\foto\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\foto\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\foto\app\Models\M_login.php(18): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\foto\app\Controllers\Home.php(51): App\Models\M_login->getLoginWithPassword('user', 'dar', 'a')
+#4 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\Home->aksi_login()
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2024-01-23 19:19:00 --> Call to undefined method App\Models\PostModel::getAlbumIdByPostId
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(33): CodeIgniter\Model->__call('getAlbumIdByPos...', Array)
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->likePost()
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-01-23 19:19:01 --> Call to undefined method App\Models\PostModel::getAlbumIdByPostId
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(33): CodeIgniter\Model->__call('getAlbumIdByPos...', Array)
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->likePost()
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-01-23 19:19:02 --> Call to undefined method App\Models\PostModel::getAlbumIdByPostId
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(33): CodeIgniter\Model->__call('getAlbumIdByPos...', Array)
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->likePost()
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-01-23 19:32:34 --> Call to undefined method App\Models\PostModel::getAlbumIdByPostId
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(33): CodeIgniter\Model->__call('getAlbumIdByPos...', Array)
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->likePost()
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-01-23 19:35:14 --> Column 'post_id' cannot be null
+CRITICAL - 2024-01-23 19:35:14 --> Call to undefined method App\Models\PostModel::getLikesCount
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(51): CodeIgniter\Model->__call('getLikesCount', Array)
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->likePost()
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-01-23 19:35:30 --> Column 'post_id' cannot be null
+CRITICAL - 2024-01-23 19:35:30 --> Too few arguments to function App\Controllers\dashboard::viewAlbum(), 0 passed in C:\xampp\htdocs\foto\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->viewAlbum()
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2024-01-23 19:36:28 --> Column 'post_id' cannot be null
+CRITICAL - 2024-01-23 19:36:28 --> Too few arguments to function App\Controllers\dashboard::viewAlbum(), 0 passed in C:\xampp\htdocs\foto\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->viewAlbum()
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2024-01-23 19:40:48 --> Column 'post_id' cannot be null
+ERROR - 2024-01-23 19:40:51 --> Column 'post_id' cannot be null
+ERROR - 2024-01-23 19:41:00 --> Column 'post_id' cannot be null
+ERROR - 2024-01-23 19:41:03 --> Column 'post_id' cannot be null
+ERROR - 2024-01-23 19:41:16 --> Column 'post_id' cannot be null
+ERROR - 2024-01-23 19:42:51 --> Column 'post_id' cannot be null
+ERROR - 2024-01-23 20:50:58 --> Unknown column '?' in 'on clause'
+CRITICAL - 2024-01-23 20:50:58 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(63): App\Models\PostModel->getPostsByAlbumm('1', '1')
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->viewAlbum('1')
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-01-23 20:55:10 --> Unknown column 'user.id_user' in 'on clause'
+CRITICAL - 2024-01-23 20:55:10 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(63): App\Models\PostModel->getPostsByAlbumm('1', '1')
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->viewAlbum('1')
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-01-23 20:55:23 --> Unknown column 'user.id_user' in 'on clause'
+CRITICAL - 2024-01-23 20:55:23 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(63): App\Models\PostModel->getPostsByAlbumm('1', '1')
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->viewAlbum('1')
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-01-23 20:56:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN `user` ON `user`.`id_user` = `post`.`user_maker`
+WHERE `post`.`album` = '1'' at line 4
+CRITICAL - 2024-01-23 20:56:17 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\foto\app\Controllers\dashboard.php(63): App\Models\PostModel->getPostsByAlbumm('1', '1')
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\dashboard->viewAlbum('1')
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\dashboard))
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-01-23 21:45:56 --> Invalid file: menuutama.php
+#0 C:\xampp\htdocs\foto\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('menuutama.php')
+#1 C:\xampp\htdocs\foto\system\Common.php(1089): CodeIgniter\View\View->render('menuutama', Array, true)
+#2 C:\xampp\htdocs\foto\app\Controllers\post.php(89): view('menuutama')
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\post->editPost('4')
+#4 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\post))
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2024-01-23 21:54:46 --> Unknown column 'foto' in 'field list'
+CRITICAL - 2024-01-23 22:07:15 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\foto\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\foto\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\foto\app\Controllers\post.php(127): CodeIgniter\Model->__call('getPostById', Array)
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\post->deletePost('2')
+#4 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\post))
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-01-23 22:07:58 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\foto\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\foto\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\foto\app\Controllers\post.php(127): CodeIgniter\Model->__call('getPostById', Array)
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\post->deletePost('2')
+#4 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\post))
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-01-23 22:08:02 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\foto\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\foto\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\foto\app\Controllers\post.php(127): CodeIgniter\Model->__call('getPostById', Array)
+#3 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\post->deletePost('3')
+#4 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\post))
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-01-23 22:08:47 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\foto\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\foto\system\Model.php(130): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\foto\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '2')
+#3 C:\xampp\htdocs\foto\app\Models\M_model.php(33): CodeIgniter\BaseModel->find('2')
+#4 C:\xampp\htdocs\foto\app\Controllers\post.php(127): App\Models\M_model->getPostById('2')
+#5 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\post->deletePost('2')
+#6 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\post))
+#7 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-01-23 22:10:00 --> Class 'App\Controllers\PostModel' not found
+#0 C:\xampp\htdocs\foto\system\CodeIgniter.php(832): App\Controllers\post->deletePost('2')
+#1 C:\xampp\htdocs\foto\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\post))
+#2 C:\xampp\htdocs\foto\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\foto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\foto\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
